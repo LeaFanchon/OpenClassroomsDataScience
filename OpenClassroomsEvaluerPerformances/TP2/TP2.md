@@ -121,23 +121,23 @@ for mean, std, params in zip(clf_mse.cv_results_['mean_test_score'], # score moy
 ```
 
     Meilleur hyperparamètre sur le jeu d'entraînement pour la métrique MSE:
-    	{'n_neighbors': 17}
+    	{'n_neighbors': 15}
     
     Résultats de la recherche sur grille pour la métrique MSE:
-    	mse = 0.520 (+/-0.183) for {'n_neighbors': 3}
-    	mse = 0.497 (+/-0.113) for {'n_neighbors': 5}
-    	mse = 0.472 (+/-0.105) for {'n_neighbors': 7}
-    	mse = 0.456 (+/-0.116) for {'n_neighbors': 9}
-    	mse = 0.452 (+/-0.114) for {'n_neighbors': 11}
-    	mse = 0.447 (+/-0.127) for {'n_neighbors': 13}
-    	mse = 0.442 (+/-0.129) for {'n_neighbors': 15}
-    	mse = 0.440 (+/-0.122) for {'n_neighbors': 17}
-    	mse = 0.441 (+/-0.120) for {'n_neighbors': 19}
-    	mse = 0.445 (+/-0.129) for {'n_neighbors': 21}
-    	mse = 0.446 (+/-0.132) for {'n_neighbors': 23}
-    	mse = 0.447 (+/-0.132) for {'n_neighbors': 25}
-    	mse = 0.446 (+/-0.130) for {'n_neighbors': 27}
-    	mse = 0.446 (+/-0.130) for {'n_neighbors': 29}
+    	mse = 0.484 (+/-0.126) for {'n_neighbors': 3}
+    	mse = 0.444 (+/-0.109) for {'n_neighbors': 5}
+    	mse = 0.435 (+/-0.110) for {'n_neighbors': 7}
+    	mse = 0.435 (+/-0.132) for {'n_neighbors': 9}
+    	mse = 0.428 (+/-0.119) for {'n_neighbors': 11}
+    	mse = 0.424 (+/-0.102) for {'n_neighbors': 13}
+    	mse = 0.421 (+/-0.094) for {'n_neighbors': 15}
+    	mse = 0.425 (+/-0.077) for {'n_neighbors': 17}
+    	mse = 0.424 (+/-0.077) for {'n_neighbors': 19}
+    	mse = 0.426 (+/-0.075) for {'n_neighbors': 21}
+    	mse = 0.428 (+/-0.072) for {'n_neighbors': 23}
+    	mse = 0.427 (+/-0.070) for {'n_neighbors': 25}
+    	mse = 0.424 (+/-0.064) for {'n_neighbors': 27}
+    	mse = 0.425 (+/-0.066) for {'n_neighbors': 29}
 
 
 
@@ -147,7 +147,7 @@ m = "Erreur quadratique moyenne obtenue sur le jeu de test en optimisant MSE : {
 print(m.format(metrics.mean_squared_error(y_test, y_pred_mse)))
 ```
 
-    Erreur quadratique moyenne obtenue sur le jeu de test en optimisant MSE : 0.416
+    Erreur quadratique moyenne obtenue sur le jeu de test en optimisant MSE : 0.466
 
 
 
@@ -183,23 +183,23 @@ for mean, std, params in zip(clf_R2.cv_results_['mean_test_score'], # score moye
 ```
 
     Meilleur hyperparamètre sur le jeu d'entraînement pour la métrique R²:
-    	{'n_neighbors': 17}
+    	{'n_neighbors': 15}
     
     Résultats de la recherche sur grille pour la métrique R²:
-    	R2 = 0.223 (+/-0.189) for {'n_neighbors': 3}
-    	R2 = 0.254 (+/-0.136) for {'n_neighbors': 5}
-    	R2 = 0.289 (+/-0.178) for {'n_neighbors': 7}
-    	R2 = 0.314 (+/-0.169) for {'n_neighbors': 9}
-    	R2 = 0.320 (+/-0.180) for {'n_neighbors': 11}
-    	R2 = 0.329 (+/-0.180) for {'n_neighbors': 13}
-    	R2 = 0.337 (+/-0.167) for {'n_neighbors': 15}
-    	R2 = 0.339 (+/-0.157) for {'n_neighbors': 17}
-    	R2 = 0.339 (+/-0.142) for {'n_neighbors': 19}
-    	R2 = 0.333 (+/-0.142) for {'n_neighbors': 21}
-    	R2 = 0.332 (+/-0.140) for {'n_neighbors': 23}
-    	R2 = 0.331 (+/-0.130) for {'n_neighbors': 25}
-    	R2 = 0.332 (+/-0.133) for {'n_neighbors': 27}
-    	R2 = 0.332 (+/-0.127) for {'n_neighbors': 29}
+    	R2 = 0.244 (+/-0.122) for {'n_neighbors': 3}
+    	R2 = 0.307 (+/-0.084) for {'n_neighbors': 5}
+    	R2 = 0.321 (+/-0.092) for {'n_neighbors': 7}
+    	R2 = 0.322 (+/-0.126) for {'n_neighbors': 9}
+    	R2 = 0.332 (+/-0.108) for {'n_neighbors': 11}
+    	R2 = 0.339 (+/-0.086) for {'n_neighbors': 13}
+    	R2 = 0.342 (+/-0.081) for {'n_neighbors': 15}
+    	R2 = 0.335 (+/-0.062) for {'n_neighbors': 17}
+    	R2 = 0.336 (+/-0.059) for {'n_neighbors': 19}
+    	R2 = 0.334 (+/-0.056) for {'n_neighbors': 21}
+    	R2 = 0.331 (+/-0.061) for {'n_neighbors': 23}
+    	R2 = 0.332 (+/-0.056) for {'n_neighbors': 25}
+    	R2 = 0.337 (+/-0.046) for {'n_neighbors': 27}
+    	R2 = 0.334 (+/-0.054) for {'n_neighbors': 29}
 
 
 
@@ -328,50 +328,75 @@ add_model_scores('k-nn', y_pred_mse)
 df = pd.DataFrame(model_comparison)
 df['best'] = df.min(axis=1)
 
-df.style
+df
 ```
 
 
 
 
-<style  type="text/css" >
-</style><table id="T_11c4725a_83b2_11e9_9f73_897289b9b835" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >random</th>        <th class="col_heading level0 col1" >constant</th>        <th class="col_heading level0 col2" >k-nn</th>        <th class="col_heading level0 col3" >best</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_11c4725a_83b2_11e9_9f73_897289b9b835level0_row0" class="row_heading level0 row0" >-r2</th>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row0_col0" class="data row0 col0" >4.31721</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row0_col1" class="data row0 col1" >0.0052192</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row0_col2" class="data row0 col2" >-0.300851</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row0_col3" class="data row0 col3" >-0.300851</td>
-            </tr>
-            <tr>
-                        <th id="T_11c4725a_83b2_11e9_9f73_897289b9b835level0_row1" class="row_heading level0 row1" >mse</th>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row1_col0" class="data row1 col0" >3.16042</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row1_col1" class="data row1 col1" >0.597477</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row1_col2" class="data row1 col2" >0.415557</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row1_col3" class="data row1 col3" >0.415557</td>
-            </tr>
-            <tr>
-                        <th id="T_11c4725a_83b2_11e9_9f73_897289b9b835level0_row2" class="row_heading level0 row2" >rmse</th>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row2_col0" class="data row2 col0" >1.77776</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row2_col1" class="data row2 col1" >0.772966</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row2_col2" class="data row2 col2" >0.644637</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row2_col3" class="data row2 col3" >0.644637</td>
-            </tr>
-            <tr>
-                        <th id="T_11c4725a_83b2_11e9_9f73_897289b9b835level0_row3" class="row_heading level0 row3" >rse</th>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row3_col0" class="data row3 col0" >5.2896</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row3_col1" class="data row3 col1" >1</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row3_col2" class="data row3 col2" >0.695519</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row3_col3" class="data row3 col3" >0.695519</td>
-            </tr>
-            <tr>
-                        <th id="T_11c4725a_83b2_11e9_9f73_897289b9b835level0_row4" class="row_heading level0 row4" >rss</th>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row4_col0" class="data row4 col0" >1517</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row4_col1" class="data row4 col1" >286.789</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row4_col2" class="data row4 col2" >199.467</td>
-                        <td id="T_11c4725a_83b2_11e9_9f73_897289b9b835row4_col3" class="data row4 col3" >199.467</td>
-            </tr>
-    </tbody></table>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>random</th>
+      <th>constant</th>
+      <th>k-nn</th>
+      <th>best</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>mse</td>
+      <td>3.093750</td>
+      <td>0.677457</td>
+      <td>0.466333</td>
+      <td>0.466333</td>
+    </tr>
+    <tr>
+      <td>rmse</td>
+      <td>1.758906</td>
+      <td>0.823078</td>
+      <td>0.682886</td>
+      <td>0.682886</td>
+    </tr>
+    <tr>
+      <td>rss</td>
+      <td>1485.000000</td>
+      <td>325.179366</td>
+      <td>223.840000</td>
+      <td>223.840000</td>
+    </tr>
+    <tr>
+      <td>rse</td>
+      <td>4.566710</td>
+      <td>1.000000</td>
+      <td>0.688359</td>
+      <td>0.688359</td>
+    </tr>
+    <tr>
+      <td>-r2</td>
+      <td>3.583451</td>
+      <td>0.003666</td>
+      <td>-0.309118</td>
+      <td>-0.309118</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 

@@ -121,23 +121,23 @@ for mean, std, params in zip(clf_mse.cv_results_['mean_test_score'], # score moy
 ```
 
     Meilleur hyperparamètre sur le jeu d'entraînement pour la métrique MSE:
-    	{'n_neighbors': 15}
+    	{'n_neighbors': 25}
     
     Résultats de la recherche sur grille pour la métrique MSE:
-    	mse = 0.484 (+/-0.126) for {'n_neighbors': 3}
-    	mse = 0.444 (+/-0.109) for {'n_neighbors': 5}
-    	mse = 0.435 (+/-0.110) for {'n_neighbors': 7}
-    	mse = 0.435 (+/-0.132) for {'n_neighbors': 9}
-    	mse = 0.428 (+/-0.119) for {'n_neighbors': 11}
-    	mse = 0.424 (+/-0.102) for {'n_neighbors': 13}
-    	mse = 0.421 (+/-0.094) for {'n_neighbors': 15}
-    	mse = 0.425 (+/-0.077) for {'n_neighbors': 17}
-    	mse = 0.424 (+/-0.077) for {'n_neighbors': 19}
-    	mse = 0.426 (+/-0.075) for {'n_neighbors': 21}
-    	mse = 0.428 (+/-0.072) for {'n_neighbors': 23}
-    	mse = 0.427 (+/-0.070) for {'n_neighbors': 25}
-    	mse = 0.424 (+/-0.064) for {'n_neighbors': 27}
-    	mse = 0.425 (+/-0.066) for {'n_neighbors': 29}
+    	mse = 0.512 (+/-0.060) for {'n_neighbors': 3}
+    	mse = 0.477 (+/-0.038) for {'n_neighbors': 5}
+    	mse = 0.462 (+/-0.039) for {'n_neighbors': 7}
+    	mse = 0.453 (+/-0.032) for {'n_neighbors': 9}
+    	mse = 0.451 (+/-0.034) for {'n_neighbors': 11}
+    	mse = 0.443 (+/-0.026) for {'n_neighbors': 13}
+    	mse = 0.444 (+/-0.025) for {'n_neighbors': 15}
+    	mse = 0.445 (+/-0.025) for {'n_neighbors': 17}
+    	mse = 0.442 (+/-0.027) for {'n_neighbors': 19}
+    	mse = 0.444 (+/-0.026) for {'n_neighbors': 21}
+    	mse = 0.442 (+/-0.027) for {'n_neighbors': 23}
+    	mse = 0.441 (+/-0.033) for {'n_neighbors': 25}
+    	mse = 0.442 (+/-0.032) for {'n_neighbors': 27}
+    	mse = 0.443 (+/-0.029) for {'n_neighbors': 29}
 
 
 
@@ -147,7 +147,7 @@ m = "Erreur quadratique moyenne obtenue sur le jeu de test en optimisant MSE : {
 print(m.format(metrics.mean_squared_error(y_test, y_pred_mse)))
 ```
 
-    Erreur quadratique moyenne obtenue sur le jeu de test en optimisant MSE : 0.466
+    Erreur quadratique moyenne obtenue sur le jeu de test en optimisant MSE : 0.428
 
 
 
@@ -183,23 +183,23 @@ for mean, std, params in zip(clf_R2.cv_results_['mean_test_score'], # score moye
 ```
 
     Meilleur hyperparamètre sur le jeu d'entraînement pour la métrique R²:
-    	{'n_neighbors': 15}
+    	{'n_neighbors': 25}
     
     Résultats de la recherche sur grille pour la métrique R²:
-    	R2 = 0.244 (+/-0.122) for {'n_neighbors': 3}
-    	R2 = 0.307 (+/-0.084) for {'n_neighbors': 5}
-    	R2 = 0.321 (+/-0.092) for {'n_neighbors': 7}
-    	R2 = 0.322 (+/-0.126) for {'n_neighbors': 9}
-    	R2 = 0.332 (+/-0.108) for {'n_neighbors': 11}
-    	R2 = 0.339 (+/-0.086) for {'n_neighbors': 13}
-    	R2 = 0.342 (+/-0.081) for {'n_neighbors': 15}
-    	R2 = 0.335 (+/-0.062) for {'n_neighbors': 17}
-    	R2 = 0.336 (+/-0.059) for {'n_neighbors': 19}
-    	R2 = 0.334 (+/-0.056) for {'n_neighbors': 21}
-    	R2 = 0.331 (+/-0.061) for {'n_neighbors': 23}
-    	R2 = 0.332 (+/-0.056) for {'n_neighbors': 25}
-    	R2 = 0.337 (+/-0.046) for {'n_neighbors': 27}
-    	R2 = 0.334 (+/-0.054) for {'n_neighbors': 29}
+    	R2 = 0.212 (+/-0.211) for {'n_neighbors': 3}
+    	R2 = 0.268 (+/-0.164) for {'n_neighbors': 5}
+    	R2 = 0.293 (+/-0.115) for {'n_neighbors': 7}
+    	R2 = 0.307 (+/-0.106) for {'n_neighbors': 9}
+    	R2 = 0.310 (+/-0.103) for {'n_neighbors': 11}
+    	R2 = 0.322 (+/-0.103) for {'n_neighbors': 13}
+    	R2 = 0.321 (+/-0.109) for {'n_neighbors': 15}
+    	R2 = 0.320 (+/-0.096) for {'n_neighbors': 17}
+    	R2 = 0.325 (+/-0.093) for {'n_neighbors': 19}
+    	R2 = 0.321 (+/-0.092) for {'n_neighbors': 21}
+    	R2 = 0.324 (+/-0.092) for {'n_neighbors': 23}
+    	R2 = 0.326 (+/-0.081) for {'n_neighbors': 25}
+    	R2 = 0.325 (+/-0.083) for {'n_neighbors': 27}
+    	R2 = 0.323 (+/-0.089) for {'n_neighbors': 29}
 
 
 
@@ -328,76 +328,15 @@ add_model_scores('k-nn', y_pred_mse)
 df = pd.DataFrame(model_comparison)
 df['best'] = df.min(axis=1)
 
-df
+print(df)
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>random</th>
-      <th>constant</th>
-      <th>k-nn</th>
-      <th>best</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>mse</td>
-      <td>3.093750</td>
-      <td>0.677457</td>
-      <td>0.466333</td>
-      <td>0.466333</td>
-    </tr>
-    <tr>
-      <td>rmse</td>
-      <td>1.758906</td>
-      <td>0.823078</td>
-      <td>0.682886</td>
-      <td>0.682886</td>
-    </tr>
-    <tr>
-      <td>rss</td>
-      <td>1485.000000</td>
-      <td>325.179366</td>
-      <td>223.840000</td>
-      <td>223.840000</td>
-    </tr>
-    <tr>
-      <td>rse</td>
-      <td>4.566710</td>
-      <td>1.000000</td>
-      <td>0.688359</td>
-      <td>0.688359</td>
-    </tr>
-    <tr>
-      <td>-r2</td>
-      <td>3.583451</td>
-      <td>0.003666</td>
-      <td>-0.309118</td>
-      <td>-0.309118</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+               random    constant        k-nn        best
+    mse      2.897917    0.630588    0.427857    0.427857
+    rmse     1.702327    0.794096    0.654108    0.654108
+    rss   1391.000000  302.682266  205.371200  205.371200
+    rse      4.595578    1.000000    0.678504    0.678504
+    -r2      3.601675    0.001327   -0.320596   -0.320596
 
 
 ### Conclusion

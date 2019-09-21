@@ -291,30 +291,53 @@ evaluation['dbscan'] = pd.Series({'silhouette': silhouette_score(X, y_pred_db),
                                   'davies_bouldin': davies_bouldin_score(X, y_pred_db),
                                   'rand_score': adjusted_rand_score(y, y_pred_db)})
 
-evaluation.style
+evaluation
 ```
 
 
 
 
-<style  type="text/css" >
-</style><table id="T_58a9e1bc_9c3c_11e9_bdf0_f48c50d438a2" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >kmeans</th>        <th class="col_heading level0 col1" >dbscan</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_58a9e1bc_9c3c_11e9_bdf0_f48c50d438a2level0_row0" class="row_heading level0 row0" >silhouette</th>
-                        <td id="T_58a9e1bc_9c3c_11e9_bdf0_f48c50d438a2row0_col0" class="data row0 col0" >0.069786</td>
-                        <td id="T_58a9e1bc_9c3c_11e9_bdf0_f48c50d438a2row0_col1" class="data row0 col1" >0.0172464</td>
-            </tr>
-            <tr>
-                        <th id="T_58a9e1bc_9c3c_11e9_bdf0_f48c50d438a2level0_row1" class="row_heading level0 row1" >davies_bouldin</th>
-                        <td id="T_58a9e1bc_9c3c_11e9_bdf0_f48c50d438a2row1_col0" class="data row1 col0" >2.8966</td>
-                        <td id="T_58a9e1bc_9c3c_11e9_bdf0_f48c50d438a2row1_col1" class="data row1 col1" >4.12848</td>
-            </tr>
-            <tr>
-                        <th id="T_58a9e1bc_9c3c_11e9_bdf0_f48c50d438a2level0_row2" class="row_heading level0 row2" >rand_score</th>
-                        <td id="T_58a9e1bc_9c3c_11e9_bdf0_f48c50d438a2row2_col0" class="data row2 col0" >0.384103</td>
-                        <td id="T_58a9e1bc_9c3c_11e9_bdf0_f48c50d438a2row2_col1" class="data row2 col1" >0.503966</td>
-            </tr>
-    </tbody></table>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>kmeans</th>
+      <th>dbscan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>silhouette</td>
+      <td>0.069786</td>
+      <td>0.017246</td>
+    </tr>
+    <tr>
+      <td>davies_bouldin</td>
+      <td>2.896600</td>
+      <td>4.128480</td>
+    </tr>
+    <tr>
+      <td>rand_score</td>
+      <td>0.384103</td>
+      <td>0.503966</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 

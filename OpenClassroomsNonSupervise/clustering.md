@@ -291,54 +291,13 @@ evaluation['dbscan'] = pd.Series({'silhouette': silhouette_score(X, y_pred_db),
                                   'davies_bouldin': davies_bouldin_score(X, y_pred_db),
                                   'rand_score': adjusted_rand_score(y, y_pred_db)})
 
-evaluation
+print(evaluation)
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>kmeans</th>
-      <th>dbscan</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>silhouette</td>
-      <td>0.069786</td>
-      <td>0.017246</td>
-    </tr>
-    <tr>
-      <td>davies_bouldin</td>
-      <td>2.896600</td>
-      <td>4.128480</td>
-    </tr>
-    <tr>
-      <td>rand_score</td>
-      <td>0.384103</td>
-      <td>0.503966</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+                      kmeans    dbscan
+    silhouette      0.069786  0.017246
+    davies_bouldin  2.896600  4.128480
+    rand_score      0.384103  0.503966
 
 
 On voit que k-means fait mieux que DBSCAN sur les deux premiers indices: le score de silhouette est d'autant plus bon qu'il est élevé, alors que le score de davies_bouldin est meilleur s'il est proche de 0. Les clusters renvoyés par k-means sont donc de meilleure qualité.
